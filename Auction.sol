@@ -51,7 +51,7 @@ contract Auction {
         require(now > deployementTime +180 minutes); // make sure that the auction ends.
         require(msg.sender == beneficiary); // make sure that the sender is the owner .
         access[maxAddress] =true;  // give an access to the winner.
-        beneficiary.transfer(max); // give the owner the money
+        beneficiary.transfer(this.balance); // give the owner the money
     }
 
 
