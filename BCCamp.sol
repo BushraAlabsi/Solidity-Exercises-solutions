@@ -26,18 +26,10 @@ contract BCCamp {
 
     
     function addStudent(address _address, uint _age, string name, bool _isEnjoying) public {
-       // your code here
-
        // create an instant of the struct , and save it in the mapping
-       var student = students[_address]; 
-        
-
-        // save the student's information
-        student.age = _age;
-        student.name = name;
-        student.isEnjoying = _isEnjoying;
-        
-
+       Student memory student1 = Student(_age,name, _isEnjoying);
+        students[_address] =student1;
+      
         // add the student's address to the array of addresses
         studentsAccts.push(_address);
     }
